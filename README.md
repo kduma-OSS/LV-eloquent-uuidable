@@ -22,9 +22,5 @@ By default it generates slug on first save.
 - `Model::whereGuid($slug)->first()` - Find by guid. (`whereGuid` is query scope)
    
 
-# euantorano
-
-A special thanks to [euantorano](http://forumsarchive.laravel.io/viewtopic.php?id=6629#6), an original code creator that this package is based on.
-
 # Packagist
 View this package on Packagist.org: [kduma/eloquent-guidable](https://packagist.org/packages/kduma/eloquent-guidable)
