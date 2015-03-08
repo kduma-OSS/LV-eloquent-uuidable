@@ -57,7 +57,7 @@ trait Guidable {
      */
     public function scopeWhereGuid($query, $guid)
     {
-        return $query->where('guid', $guid);
+        return $query->where($this->getTable().'.guid', $guid);
     }
 
 
