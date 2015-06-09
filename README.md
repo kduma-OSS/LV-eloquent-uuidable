@@ -1,10 +1,16 @@
 # L5-eloquent-guidable
+[![Latest Stable Version](https://poser.pugx.org/kduma/eloquent-guidable/v/stable.svg)](https://packagist.org/packages/kduma/eloquent-guidable) 
+[![Total Downloads](https://poser.pugx.org/kduma/eloquent-guidable/downloads.svg)](https://packagist.org/packages/kduma/eloquent-guidable) 
+[![Latest Unstable Version](https://poser.pugx.org/kduma/eloquent-guidable/v/unstable.svg)](https://packagist.org/packages/kduma/eloquent-guidable) 
+[![License](https://poser.pugx.org/kduma/eloquent-guidable/license.svg)](https://packagist.org/packages/kduma/eloquent-guidable)
+[![SensioLabsInsight](https://insight.sensiolabs.com/projects/266daf9d-d071-4f3c-9055-0a5445304c90/mini.png)](https://insight.sensiolabs.com/projects/266daf9d-d071-4f3c-9055-0a5445304c90)
+
 Eases using and generating guid's in Laravel Eloquent models.
 
 # Setup
 Add the package to the require section of your composer.json and run `composer update`
 
-    "kduma/eloquent-guidable": "~1.0"
+    "kduma/eloquent-guidable": "^1.1"
 
 # Prepare models
 Inside your model (not on top of file) add following lines:
