@@ -1,9 +1,8 @@
 <?php
 namespace KDuma\Eloquent;
 
-use Rhumsaa\Uuid\Uuid;
+use Ramsey\Uuid\Uuid;
 use Config;
-use Hashids\Hashids;
 
 
 /**
