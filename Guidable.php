@@ -1,27 +1,24 @@
 <?php
+
 namespace KDuma\Eloquent;
 
 use Ramsey\Uuid\Uuid;
-use Config;
-
 
 /**
- * Class Guidable
- * @package KDuma\Eloquent
+ * Class Guidable.
  */
-trait Guidable {
-
-
+trait Guidable
+{
     /**
      * @return string
      */
     protected function makeGuid()
     {
-
         $guid = Uuid::uuid4()->toString();
 
-        if($guid == $this->guid)
+        if ($guid == $this->guid) {
             return $guid;
+        }
 
         $rowCount = \DB::table($this->getTable())->where('guid', $guid)->count();
         if ($rowCount > 0) {
@@ -31,10 +28,9 @@ trait Guidable {
         }
     }
 
-    /**
-     *
-     */
-    public function newGuid(){
+
+    public function newGuid()
+    {
         $this->guid = $this->makeGuid();
     }
 
@@ -42,12 +38,14 @@ trait Guidable {
      * @param array $options
      * @return mixed
      */
-    public function save(array $options=[]){
-        if($this->guid == '')
+    public function save(array $options = [])
+    {
+        if ($this->guid == '') {
             $this->newGuid();
+        }
+
         return parent::save($options);
     }
-
 
     /**
      * @param $query
@@ -58,6 +56,4 @@ trait Guidable {
     {
         return $query->where($this->getTable().'.guid', $guid);
     }
-
-
 }
