@@ -4,6 +4,7 @@
 [![Latest Unstable Version](https://poser.pugx.org/kduma/eloquent-guidable/v/unstable.svg)](https://packagist.org/packages/kduma/eloquent-guidable) 
 [![License](https://poser.pugx.org/kduma/eloquent-guidable/license.svg)](https://packagist.org/packages/kduma/eloquent-guidable)
 [![SensioLabsInsight](https://insight.sensiolabs.com/projects/266daf9d-d071-4f3c-9055-0a5445304c90/mini.png)](https://insight.sensiolabs.com/projects/266daf9d-d071-4f3c-9055-0a5445304c90)
+[![StyleCI](https://styleci.io/repos/31719766/shield?branch=master)](https://styleci.io/repos/31719766)
 
 Eases using and generating guid's in Laravel Eloquent models.
 
