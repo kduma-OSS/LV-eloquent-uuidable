@@ -1,17 +1,17 @@
 {
-  "name": "kduma/eloquent-guidable",
-  "description": "Eases using and generating guid's in Laravel Eloquent models.",
+  "name": "kduma/eloquent-uuidable",
+  "description": "Eases using and generating uuid's in Laravel Eloquent models.",
   "keywords": ["laravel", "eloquent", "uuid", "guid"],
   "license": "MIT",
   "authors": [
     {
       "name": "Krystian Duma",
-      "email": "git@kduma.tk"
+      "email": "git@krystian.duma.sh"
     }
   ],
   "require": {
     "php": ">=5.4.0",
-    "ramsey/uuid": "^3.5"
+    "ramsey/uuid": "^3.8"
   },
   "autoload": {
     "psr-4": {

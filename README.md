@@ -1,33 +1,36 @@
-# L5-eloquent-guidable
-[![Latest Stable Version](https://poser.pugx.org/kduma/eloquent-guidable/v/stable.svg)](https://packagist.org/packages/kduma/eloquent-guidable) 
-[![Total Downloads](https://poser.pugx.org/kduma/eloquent-guidable/downloads.svg)](https://packagist.org/packages/kduma/eloquent-guidable) 
-[![Latest Unstable Version](https://poser.pugx.org/kduma/eloquent-guidable/v/unstable.svg)](https://packagist.org/packages/kduma/eloquent-guidable) 
-[![License](https://poser.pugx.org/kduma/eloquent-guidable/license.svg)](https://packagist.org/packages/kduma/eloquent-guidable)
-[![SensioLabsInsight](https://insight.sensiolabs.com/projects/266daf9d-d071-4f3c-9055-0a5445304c90/mini.png)](https://insight.sensiolabs.com/projects/266daf9d-d071-4f3c-9055-0a5445304c90)
-[![StyleCI](https://styleci.io/repos/31719766/shield?branch=master)](https://styleci.io/repos/31719766)
+# L5-eloquent-uuidable
+[![Latest Stable Version](https://poser.pugx.org/kduma/eloquent-uuidable/v/stable.svg)](https://packagist.org/packages/kduma/eloquent-uuidable) 
+[![Total Downloads](https://poser.pugx.org/kduma/eloquent-uuidable/downloads.svg)](https://packagist.org/packages/kduma/eloquent-uuidable) 
+[![Latest Unstable Version](https://poser.pugx.org/kduma/eloquent-uuidable/v/unstable.svg)](https://packagist.org/packages/kduma/eloquent-uuidable) 
+[![License](https://poser.pugx.org/kduma/eloquent-uuidable/license.svg)](https://packagist.org/packages/kduma/eloquent-uuidable)
 
 Eases using and generating guid's in Laravel Eloquent models.
 
 # Setup
-Add the package to the require section of your composer.json and run `composer update`
+Install it using composer
 
-    "kduma/eloquent-guidable": "^1.1"
+    composer require kduma/eloquent-uuidable
 
 # Prepare models
 Inside your model (not on top of file) add following lines:
     
-    use \KDuma\Eloquent\Guidable;
+    use \KDuma\Eloquent\Uuidable;
 
-In database create `guid` string field. If you use migrations, you can use following snippet:
+In database create `uuid` string field. If you use migrations, you can use following snippet:
 
-    $table->string('guid')->unique();
+    $table->uuid('uuid')->unique();
 
 # Usage
 By default it generates slug on first save.
 
-- `$model->newGuid()` - Generate new guid. (Remember to save it by yourself)
-- `Model::whereGuid($slug)->first()` - Find by guid. (`whereGuid` is query scope)
+- `$model->regenerateUuid()` - Generate new uuid. (Remember to save it by yourself)
+- `Model::whereUuid($uuid)->first()` - Find by guid. (`whereUuid` is query scope)
    
+# Upgrade from 1.x/2.x version of `kduma/eloquent-guidable`
+
+Add following line to yours models to switch from using `uuid` column name to `guid` as it was used in previous versions:
+
+	protected $uuid_field = 'guid';
 
 # Packagist
-View this package on Packagist.org: [kduma/eloquent-guidable](https://packagist.org/packages/kduma/eloquent-guidable)
+View this package on Packagist.org: [kduma/eloquent-uuidable](https://packagist.org/packages/kduma/eloquent-uuidable)
