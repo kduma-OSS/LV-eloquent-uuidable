@@ -23,6 +23,16 @@ trait Uuidable
             $model->generateUuidOnCreateOrUpdate();
         });
     }
+    
+     /**
+     * Gets first model by uuid
+     *
+     * @return static
+     */
+    public static function uuid(string $uuid): static
+    {
+        return static::whereUuid($uuid)->first();
+    }
 
     /**
      * @throws \Exception
