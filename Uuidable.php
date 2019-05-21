@@ -27,9 +27,9 @@ trait Uuidable
      /**
      * Gets first model by uuid
      *
-     * @return static
+     * @return self
      */
-    public static function uuid(string $uuid): static
+    public static function uuid(string $uuid): self
     {
         return static::whereUuid($uuid)->first();
     }
