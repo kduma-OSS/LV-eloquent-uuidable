@@ -29,7 +29,7 @@ trait Uuidable
      *
      * @return self
      */
-    public static function uuid(string $uuid): self
+    public static function byUuid(string $uuid): self
     {
         return static::whereUuid($uuid)->first();
     }
