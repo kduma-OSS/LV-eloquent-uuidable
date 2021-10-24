@@ -3,6 +3,7 @@
 namespace KDuma\Eloquent;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Facades\DB;
 use Ramsey\Uuid\Uuid;
 
 /**
@@ -78,7 +79,7 @@ trait Uuidable
         if (!isset($this->check_for_uuid_duplicates) || !$this->check_for_uuid_duplicates)
             return $uuid;
 
-        $rowCount = \DB::table($this->getTable())->where($this->getUuidField(), $uuid)->count();
+        $rowCount = DB::table($this->getTable())->where($this->getUuidField(), $uuid)->count();
 
         return $rowCount > 0 ? $this->uuidGenerate() : $uuid;
     }
