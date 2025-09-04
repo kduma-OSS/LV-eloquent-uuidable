@@ -6,6 +6,8 @@
 
 Eases using and generating guid's in Laravel Eloquent models.
 
+Check full documentation here: [opensource.duma.sh/libraries/php/eloquent-uuidable](https://opensource.duma.sh/libraries/php/eloquent-uuidable)
+
 # Setup
 Install it using composer
 
