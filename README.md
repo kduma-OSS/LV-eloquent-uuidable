@@ -1,38 +1,43 @@
-# L5-eloquent-uuidable
-[![Latest Stable Version](https://poser.pugx.org/kduma/eloquent-uuidable/v/stable.svg)](https://packagist.org/packages/kduma/eloquent-uuidable) 
-[![Total Downloads](https://poser.pugx.org/kduma/eloquent-uuidable/downloads.svg)](https://packagist.org/packages/kduma/eloquent-uuidable) 
-[![Latest Unstable Version](https://poser.pugx.org/kduma/eloquent-uuidable/v/unstable.svg)](https://packagist.org/packages/kduma/eloquent-uuidable) 
+# Eloquent UUID-able
+
+[![Latest Stable Version](https://poser.pugx.org/kduma/eloquent-uuidable/v/stable.svg)](https://packagist.org/packages/kduma/eloquent-uuidable)
+[![Total Downloads](https://poser.pugx.org/kduma/eloquent-uuidable/downloads.svg)](https://packagist.org/packages/kduma/eloquent-uuidable)
 [![License](https://poser.pugx.org/kduma/eloquent-uuidable/license.svg)](https://packagist.org/packages/kduma/eloquent-uuidable)
 
-Eases using and generating guid's in Laravel Eloquent models.
+Eloquent trait that adds a UUID as an additional column alongside the numeric `id` in Laravel models.
 
-Check full documentation here: [opensource.duma.sh/libraries/php/eloquent-uuidable](https://opensource.duma.sh/libraries/php/eloquent-uuidable)
+Full documentation: [opensource.duma.sh/libraries/php/eloquent-uuidable](https://opensource.duma.sh/libraries/php/eloquent-uuidable)
 
-# Setup
-Install it using composer
+## Requirements
 
-    composer require kduma/eloquent-uuidable
+- PHP `^8.3`
+- Laravel `^13.0`
 
-# Prepare models
-Inside your model (not on top of file) add following lines:
-    
-    use \KDuma\Eloquent\Uuidable;
+## Installation
 
-In database create `uuid` string field. If you use migrations, you can use following snippet:
+```bash
+composer require kduma/eloquent-uuidable
+```
 
-    $table->uuid('uuid')->unique();
+## Usage
 
-# Usage
-By default it generates slug on first save.
+```php
+use KDuma\Eloquent\Uuidable;
+use KDuma\Eloquent\Attributes\HasUuid;
 
-- `$model->regenerateUuid()` - Generate new uuid. (Remember to save it by yourself)
-- `Model::whereUuid($uuid)->first()` - Find by guid. (`whereUuid` is query scope)
-   
-# Upgrade from 1.x/2.x version of `kduma/eloquent-guidable`
+#[HasUuid(field: 'uuid')]
+class User extends Model
+{
+    use Uuidable;
+}
+```
 
-Add following line to yours models to switch from using `uuid` column name to `guid` as it was used in previous versions:
+Add a `uuid` column to your migration:
 
-	protected $uuid_field = 'guid';
+```php
+$table->uuid('uuid')->unique();
+```
 
-# Packagist
-View this package on Packagist.org: [kduma/eloquent-uuidable](https://packagist.org/packages/kduma/eloquent-uuidable)
+UUID is auto-generated on create. Find by UUID with `User::whereUuid($uuid)` or `User::byUuid($uuid)`.
+
+> Unlike Laravel's built-in `HasUuids`, this package keeps the numeric `id` as the primary key and stores the UUID in a separate column.
