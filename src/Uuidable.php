@@ -73,12 +73,13 @@ trait Uuidable
             return $value;
         }
 
-        if (isset($this->{$legacyProperty})) {
+        if (property_exists($this, $legacyProperty)) {
             trigger_error(
                 "Using \${$legacyProperty} on " . static::class . ' is deprecated. Use #[HasUuid] attribute instead.',
                 E_USER_DEPRECATED,
             );
-            return $this->{$legacyProperty};
+
+            return $this->{$legacyProperty} ?? $default;
         }
 
         return $default;
