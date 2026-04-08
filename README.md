@@ -1,5 +1,9 @@
 # Eloquent UUID-able
 
+[![Latest Stable Version](https://poser.pugx.org/kduma/eloquent-uuidable/v/stable.svg)](https://packagist.org/packages/kduma/eloquent-uuidable)
+[![Total Downloads](https://poser.pugx.org/kduma/eloquent-uuidable/downloads.svg)](https://packagist.org/packages/kduma/eloquent-uuidable)
+[![License](https://poser.pugx.org/kduma/eloquent-uuidable/license.svg)](https://packagist.org/packages/kduma/eloquent-uuidable)
+
 Eloquent trait that adds a UUID as an additional column alongside the numeric `id` in Laravel models.
 
 Full documentation: [opensource.duma.sh/libraries/php/eloquent-uuidable](https://opensource.duma.sh/libraries/php/eloquent-uuidable)
